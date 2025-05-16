@@ -24,7 +24,140 @@ const ISP = metaInfo.trim();
 const httpServer = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello, World\n');
+    res.end('<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健帆的博客</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .article-link {
+            transition: all 0.3s ease;
+        }
+
+        .article-link:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 现代化导航栏样式 */
+        nav {
+            background: linear-gradient(to right, #007BFF, #0056b3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* 流式布局容器 */
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* 文章卡片样式 */
+        .article-card {
+            flex: 1 1 calc(33.333% - 2rem);
+            min-width: 300px;
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background: linear-gradient(to right, #007BFF, #0056b3);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- 导航栏 -->
+    <nav class="p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">健帆的博客</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="hover:underline">首页</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 文章列表 -->
+    <div class="container mx-auto p-4 article-container">
+        <a href="article1.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/400" alt="大模型：人工智能的新里程碑">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">大模型：人工智能的新里程碑</h3>
+                <p class="text-gray-600">本文探讨大模型如何成为人工智能发展的新里程碑，以及它带来的变革。</p>
+            </div>
+        </a>
+        <a href="article2.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/401" alt="人工智能与大模型的协同发展">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">人工智能与大模型的协同发展</h3>
+                <p class="text-gray-600">分析人工智能和大模型如何相互促进、协同发展。</p>
+            </div>
+        </a>
+        <a href="article3.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/402" alt="大模型在人工智能应用中的挑战与机遇">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">大模型在人工智能应用中的挑战与机遇</h3>
+                <p class="text-gray-600">讨论大模型在人工智能实际应用中面临的挑战和带来的机遇。</p>
+            </div>
+        </a>
+        <a href="article4.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/403" alt="智能家居：提升生活品质的技术革新">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">智能家居：提升生活品质的技术革新</h3>
+                <p class="text-gray-600">探索智能家居技术如何改变我们的日常生活，带来更多便利和舒适。</p>
+            </div>
+        </a>
+        <a href="article5.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/404" alt="健康生活：合理饮食与运动的重要性">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">健康生活：合理饮食与运动的重要性</h3>
+                <p class="text-gray-600">阐述合理饮食和规律运动对身体健康的积极影响，分享健康生活的小贴士。</p>
+            </div>
+        </a>
+        <a href="article6.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/405" alt="人工智能在医疗领域的应用前景">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">人工智能在医疗领域的应用前景</h3>
+                <p class="text-gray-600">探讨人工智能技术在医疗诊断、治疗和研究中的应用，以及可能带来的变革。</p>
+            </div>
+        </a>
+        <a href="article7.html" class="article-card article-link">
+            <img src="https://picsum.photos/600/406" alt="数码摄影：捕捉生活中的美好瞬间">
+            <div class="article-card-content">
+                <h3 class="text-xl font-bold mb-2">数码摄影：捕捉生活中的美好瞬间</h3>
+                <p class="text-gray-600">介绍数码摄影的技巧和方法，帮助你更好地记录生活中的精彩时刻。</p>
+            </div>
+        </a>
+    </div>
+    <!-- 页脚 -->
+    <footer class="p-4 text-white text-center">
+        <p>&copy; 2025 健帆的博客</p>
+    </footer>
+</body>
+
+</html>
+    ');
   } else if (req.url === `/${SUB_PATH}`) {
     const vlessURL = `vless://${UUID}@www.visa.com.tw:443?encryption=none&security=tls&sni=${DOMAIN}&type=ws&host=${DOMAIN}&path=%2F#${NAME}-${ISP}`;
 
